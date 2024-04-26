@@ -52,7 +52,19 @@ const {onSent, recentPrompt, showResult, loading, resultData,setInput,input} = u
                         </div>
                         <div className="result-data">
                             <img src={assets.gemini_icon}  > </img>
-                            <p dangerouslySetInnerHTML={{__html:resultData}}>{resultData} </p>
+                            {loading
+                            ? <div className="loader"> 
+                                <hr></hr>
+                                <hr></hr>
+                                <hr></hr>
+
+
+                                
+                            </div>
+                            : <p dangerouslySetInnerHTML={{__html:resultData}}>{resultData} </p>
+                            
+                            }
+                           
 
 
                         </div>
