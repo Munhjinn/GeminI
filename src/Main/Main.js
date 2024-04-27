@@ -51,7 +51,7 @@ const {onSent, recentPrompt, showResult, loading, resultData,setInput,input} = u
                         <p>{recentPrompt}</p>
                         </div>
                         <div className="result-data">
-                            <img src={assets.gemini_icon}  > </img>
+                            <img src={assets.gemini_icon} alt=""  /> 
                             {loading
                             ? <div className="loader"> 
                                 <hr></hr>
@@ -61,7 +61,7 @@ const {onSent, recentPrompt, showResult, loading, resultData,setInput,input} = u
 
                                 
                             </div>
-                            : <p dangerouslySetInnerHTML={{__html:resultData}}>{resultData} </p>
+                            : <p dangerouslySetInnerHTML={{__html:resultData}}></p>
                             
                             }
                            
@@ -77,9 +77,9 @@ const {onSent, recentPrompt, showResult, loading, resultData,setInput,input} = u
                     <div className="search-box">
                         <input onChange = {(e)=>setInput(e.target.value)} value={input} type="text" placeholder="Enter a prompt here"/>
                         <div>
-                            <img src={assets.gallery_icon} alt="" />
+                            <img src={assets.gallery_icon} alt="" />    
                             <img src={assets.mic_icon} alt="" />
-                            <img src={assets.send_icon} alt="" />
+                            <img onClick={()=>onSent()} src={assets.send_icon} alt="" />
                         </div>
                     </div>
                 </div>
