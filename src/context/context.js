@@ -21,9 +21,9 @@ const ContextProvider = (props) => {
 
     const onSent = async (prompt) => {
 
-        setResultData("");
-        setLoading(true);
-        setShowResults(true);
+        setResultData("")
+        setLoading(true)
+        setShowResults(true)
         setRecentPrompt(input)
         setPrevPrompts(prev=>[...prev,input])
         const response = await runChat(input)

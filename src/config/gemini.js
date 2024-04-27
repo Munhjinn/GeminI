@@ -8,7 +8,7 @@ import {
   }  from "@google/generative-ai";
   
   const MODEL_NAME = "gemini-1.5-pro-latest";
-  const API_KEY = "AIzaSyDIXqf41dybasVsSMhCXbF2A2XSc8ubmSE";
+  const API_KEY = "AIzaSyB2aS30PBNGHAsa0dIZMyPt38OYuLA1fF8";
   
   async function runChat(prompt) {
     const genAI = new GoogleGenerativeAI(API_KEY);
@@ -48,9 +48,14 @@ import {
     });
   
     const result = await chat.sendMessage(prompt);
-    const response = result.response;
+    if(result.error) {
+      console.error("Aldaa:", result.error)
+    } else {
+      const response = result.response;
     console.log(response.text());
     return response.text();
+    }
+    
   }
   
   export default runChat;
